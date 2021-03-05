@@ -82,7 +82,7 @@ main {
     /* This also hides the navbar which is outside of the page */
     overflow: hidden;
     /* Use an image as a background */
-    background: url("/images/curtains.jpg");
+    background: url("/cinemascope.github.io/images/curtains.jpg");
     /* Stretch the background image across the screen */
     background-size: cover;
     background-position: center;
