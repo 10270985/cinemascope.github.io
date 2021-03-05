@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden
+}
+
+nav {
+    z-index: 5;
+    transition: transform 0.8s;
+    transform: translateX(25vw);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100vh;
+    border-top-left-radius: 18px;
+    background: rgb(20, 20, 20);
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.linkContainer > span {
+    text-align: center;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    /* link size is 2vw if 2vw is within 15px and 30px */
+    font-size: calc(clamp(15px, 2vw, 30px));
+    transition: color 0.3s;
+}
+
+.visibleNav {
+    transform: translateX(0) !important;
+}
+
+.visibleSlide {
+    display: block !important;
+}
+
+.slide {
+    display: none;
+    background: white;
+    border: solid 3px white;
+    /* Without using more container and flex boxes the image has a gap underneath
+    A white background hides this but makes the bottom border bigger */
+    border-bottom: 0;
+    max-height: 42vh;
+    max-width: 42vw;
+    object-fit: cover;
+}
+
+.link:hover {
+    color: lime;
+}
+.hamburgerClose {
+    position: absolute;
+    right: calc(25vw - 2.4vw);
+    top: 0;
+    color: red;
+    /* Change the cursor to make the element appear clickable */
+    cursor: pointer;
+    /* Hide the element by default, it is only used in the mobile view */
+    display: none;
+}
+
+main {
+    /* Hide excess content and prevent scrolling*/
+    /* This also hides the navbar which is outside of the page */
+    overflow: hidden;
+    /* Use an image as a background */
+    background: url("/images/curtains.jpg");
+    /* Stretch the background image across the screen */
+    background-size: cover;
+    background-position: center;
+    /* Use all of the screen (100% of the available width and height) */
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas:
+    "."
+    "content";
+}
+
+.mediaContainer {
+    grid-area: content;
+    display: flex;
+    justify-content: space-around;
+    max-height: 80vh;
+}
+
+.middle {
+    width: 90%;
+    height: 70vh;
+    background: #222222;
+    color: white;
+    font-family: 'Ubuntu Condensed';
+}
+
+.mapEmbed {
+    width: 100%;
+    height: 50vh;
+}
+
+.content {
+    font-size: 1.4vw;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contactList {
+    list-style: none;
+}
+
+.logoText {
+    font-family: 'DotGothic16';
+    letter-spacing: 3px;
+    font-size: 50px;
+    grid-area: logo;
+    color: white;
+    position: absolute;
+    left: 4vw;
+    top: 4vh;
+    cursor: default;
+}
+
+.hamburgerLabel {
+    /* z-index renders the hamburger icon above the navbar */
+    z-index: 10;
+    font-size: 38px;
+    /* Change the cursor to make the element appear clickable */
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    right: 8vw;
+    top: 4vh;
+    /* Use the retro pixel font */
+    font-family: 'DotGothic16';
+    letter-spacing: 3px;
+    /* Prevent the text from being selected when clicked */
+    user-select: none;
+}
+
+.hamburgerLabel > i {
+    transition: color 0.3s, transform 0.9s;
+    font-size: 42px;
+}
+
+.rotate {
+    transform: rotate(-90deg);
+}
+
+.title {
+    text-align: center;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Ubuntu Condensed';
+    background: #333333;
+    text-decoration: underline;
+    max-height: 5vh;
+}
+
+
+/* Responsive headache */
+@media only screen and (max-width: 768px) {
+    /* Reposition the navbar to stack vertically */
+    nav {
+        z-index: 5;
+        transition: transform 0.8s;
+        transform: translateY(-15vh);
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 10.5vh;
+        border-radius: 0;
+    }
+
+    .visibleNav {
+        transform: translateY(0) !important;
+    }
+
+    .linkContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+
+
+    /* Adjust the position of the elements to stack */
+    /* The side-by-side layout used in desktop would be too small for mobile */
+    /* Resize the logo and navbar control*/
+    .logoText {
+        font-size: 6vw;
+    }
+
+    .hamburgerLabel {
+        font-size: 6vw;
+        z-index: auto;
+    }
+
+    .hamburgerLabel > i {
+        font-size: 7vw;
+    }
+    .hamburgerClose {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 2px;
+    }
+
+    /* Resize the description text in the middle */
+    .description {
+            color: white;
+            text-align: center;
+            grid-area: description;
+            font-size: 5vw;
+    }
+
+    /* Resize the content */
+
+    .left, .middle, .right {
+        margin-top: 2vh;
+        width: 80%;
+        height: auto;
+        background: #222222;
+        color: white;
+        font-family: 'Ubuntu Condensed';
+    }
+
+    main {
+        background: rgb(20, 20, 20);
+        grid-template-columns: 100vw;
+        grid-template-rows: 10vh 90vh;
+        grid-template-areas:
+        "."
+        "content";
+    }
+
+    .mediaContainer {
+        max-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mapEmbed {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .content {
+        font-size: 2.6vw;
+    }
+
+}
