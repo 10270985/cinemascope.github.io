@@ -1,2 +1,0 @@
-# cinemascope.github.io
-website
