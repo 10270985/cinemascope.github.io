@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden
+}
+
+nav {
+    z-index: 5;
+    transition: transform 0.8s;
+    transform: translateX(25vw);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100vh;
+    border-top-left-radius: 18px;
+    background: rgb(20, 20, 20);
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.linkContainer > span {
+    text-align: center;
+}
+
+.logoText {
+    font-family: 'DotGothic16';
+    letter-spacing: 3px;
+    font-size: 50px;
+    grid-area: logo;
+    color: white;
+    position: absolute;
+    left: 4vw;
+    top: 4vh;
+    cursor: default;
+}
+
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    /* link size is 2vw if 2vw is within 15px and 30px */
+    font-size: calc(clamp(15px, 2vw, 30px));
+    transition: color 0.3s;
+}
+
+.visibleNav {
+    transform: translateX(0) !important;
+}
+
+.link:hover {
+    color: lime;
+}
+.hamburgerClose {
+    position: absolute;
+    right: calc(25vw - 2.4vw);
+    top: 0;
+    color: red;
+    /* Change the cursor to make the element appear clickable */
+    cursor: pointer;
+    /* Hide the element by default, it is only used in the mobile view */
+    display: none;
+}
+
+.hamburgerLabel {
+    /* z-index renders the hamburger icon above the navbar */
+    z-index: 10;
+    font-size: 38px;
+    /* Change the cursor to make the element appear clickable */
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    right: 8vw;
+    top: 4vh;
+    /* Use the retro pixel font */
+    font-family: 'DotGothic16';
+    letter-spacing: 3px;
+    /* Prevent the text from being selected when clicked */
+    user-select: none;
+}
+
+.hamburgerLabel > i {
+    transition: color 0.3s, transform 0.9s;
+    font-size: 42px;
+}
+
+.rotate {
+    transform: rotate(-90deg);
+}
+
+main {
+    /* Hide excess content and prevent scrolling*/
+    /* This also hides the navbar which is outside of the page */
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+    /* Use all of the screen (100% of the available width and height) */
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas:
+    "."
+    "content";
+}
+
+.messageContainer {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80vw;
+    height: 80%;
+    background: #222222;
+    margin: auto;
+    font-family: 'Ubuntu Condensed';
+}
+
+
+.successMessage {
+    font-size: 4vw;
+    color: lime;
+}
+
+.errorMessage {
+    font-size: 4vw;
+    color: red;
+}
+
+.successButton {
+    text-align: center;
+    color: black;
+    border-radius: 12px;
+    width: 15vw;
+    height: 10%;
+    padding: 8px;
+    background: green;
+    font-size: 2vw;
+}
+
+.retryButton {
+    text-align: center;
+    color: black;
+    border-radius: 12px;
+    width: 15vw;
+    height: 10%;
+    padding: 8px;
+    background: red;
+    font-size: 2vw;
+}
