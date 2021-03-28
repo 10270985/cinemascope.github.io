@@ -1,80 +1,159 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 	<meta charset="UTF-8">
+
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 	<title>CinemaScope</title>
+
 	<!-- Using icons from font awesome -->
+
 	<link href="fontawesome4/css/font-awesome.min.css" rel="stylesheet">
+
 	<!-- Google fonts -->
+
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+
 	<!-- Ubuntu Condensed font from google -->
+
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
 	<!-- DotGothic16 font from google -->
+
 	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
 	<link type="text/css" rel="stylesheet" href="css/index.css">
+
 </head>
+
 <body>
+
 	<nav>
+
 		<span class="hamburgerClose"><i class="fa fa-times" aria-hidden="true"></i></span>
+
 		<div class="linkContainer">
+
 			<span><a href="index.html" class="link" id="home">Home</a></span>
+
 			<span><a href="about.html" class="link" id="about">About</a></span>
-			<span><a href="times.html" class="link" id="times">Times</a></span>
+
+			<span><a href="dashboard.php" class="link" id="times">Times</a></span>
 			<span><a href="faq.html" class="link" id="faq">FAQ</a></span>
+
 			<span><a href="festivals.html" class="link" id="festivals">Festivals</a></span>
+
 			<span><a href="login.html" class="link" id="login">Login</a></span>
+
 			<span><a href="register.html" class="link" id="register">Register</a></span>
+
 		</div>
+
 	</nav>
+
 	<main>
+
 		<h1 class="logoText">CinemaScope</h1>
+
 		<h1><span class="hamburgerLabel">Menu <i class="fa fa-bars"></i></span></h1>
+
 		<h2 class="description">Book with CinemaScope, the most exquisite entertainment provider</h1>
 
+
+
 		<!-- Using mediaContainer for flexability with the mobile view -->
+
 		<div class="mediaContainer">
+
 			<button class="slideshowEnable" type="button">View images</button>
+
 			<section class="slideshow">
+
 					<div class="slide visibleSlide">
+
 						<h1 class="title">Visit our many elegant locations</h1>
+
 						<img src="images/outside.jpg" alt="Cinema locations">
+
 					</div>
+
 					<div class="slide">
+
 						<h1 class="title">Sit in the comfiest seats</h1>
+
 						<img src="images/comfort.jpg" alt="Cinema chairs">
+
 					</div>
+
 					<div class="slide">
+
 						<h1 class="title">Immerse in the latest movies</h1>
+
 						<img src="images/immersion.jpg" alt="Watch a movie">
+
 					</div>
+
 					<div class="slide">
+
 						<h1 class="title">Eat the finest cinema food</h1>
+
 						<img src="images/food.jpg" alt="Cinema food">
+
 					</div>
+
 			</section>
+
 			<button class="youtubeEnable" type="button">View our YouTube</button>
+
 			<section class="youtube">
+
 				<h1 class="title">View our youtube channel</h1>
+
 				<iframe class="video" src="https://www.youtube-nocookie.com/embed/YG0fzPFU_q4"
+
 					frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+
 					gyroscope; picture-in-picture" allowfullscreen>
+
 				</iframe>
+
 			</section>
+
 		</div>
 
+
+
 	</main>
+
 	<!-- toggle the navigation bar when clicked -->
+
 	<script type="text/javascript" src="js/navbar.js"></script>
 
+
+
 	<!-- animate the slideshow -->
+
 	<script type="text/javascript" src="js/slideshow.js"></script>
 
+
+
 	<!-- Handle the media toggle buttons for mobile devices -->
+
 	<script type="text/javascript" src="js/index-mobile-buttons.js"></script>
 
+
+
 	<!-- import jQuery -->
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="></script>
 
+
+
 </body>
+
 </html>
+
